@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Lab2AppRun</string>
+    <!-- Strings related to activities tittle-->
+    <!-- Strings related to login -->
+    <string name="prompt_user">User</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="error_invalid_password">Password is too short</string>
+    <string name="error_incorrect_password">User or password invalid</string>
+    <string name="error_invalid_user">User is too short</string>
+    <string name="error_field_required">This file is required</string>
+    <string name="correo">E-mail</string>
+    <string name="Registrarse">Register</string>
+    <string name="telefono">Phone number</string>
+    <string name="invalid_mail">Invalid e-mail</string>
+    <string name="pass_no_equals">Password do not match</string>
+    <string name="user_exists">User already exists</string>
+    <string name="register_cancelled">Register was cancelled</string>
+    <string name="good_register">Successful registration</string>
+    <string name="user_no_exists">User is not registered</string>
+    <string name="confirmarConstraseña">Confirm password</string>
+    <string name="about">Information</string>
+    <string name="races">Races</string>
+    <string name="no_race">There are not races</string>
+    <string name="profile">Profile</string>
+    <string name="login">Sign In or Register</string>
+    <string name="action_settings">Sign Out</string>
+</resources>
