@@ -1,5 +1,8 @@
-package co.edu.udea.compumovil.gr7.lab2apprun;
+package co.edu.udea.compumovil.gr7.lab2apprun.events;
 
+/**
+ * Created by Jeniffer Acosta on 4/04/2017.
+ */
 
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
@@ -26,13 +29,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.util.Calendar;
 
+import co.edu.udea.compumovil.gr7.lab2apprun.R;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.DbHelper;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.StatusContract;
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class AddRaceFragment extends Fragment {
+public class AddEvent extends Fragment {
     Bitmap pict;
     private static final int REQUEST_CODE_GALLERY=1;
     private static final int REQUEST_CODE_CAMERA=2;
@@ -49,15 +49,15 @@ public class AddRaceFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         dbH=new DbHelper(getActivity().getBaseContext());
-        view=inflater.inflate(R.layout.fragment_add_race,container,false);
-        pict = BitmapFactory.decodeResource(getActivity().getResources(), R.mipmap.ic_car);
-        targetImageR = (ImageView)view.findViewById(R.id.raceImage);
+        view=inflater.inflate(R.layout.fragment_add_event,container,false);
+        pict = BitmapFactory.decodeResource(getActivity().getResources(), R.drawable.calendar);
+        targetImageR = (ImageView)view.findViewById(R.id.eventImage);
         targetImageR.setImageBitmap(pict);
-        txtValidateR[0]=(EditText)view.findViewById(R.id.editTextRName);
-        txtValidateR[1]=(EditText)view.findViewById(R.id.editTextRDescription);
-        txtValidateR[2]=(EditText)view.findViewById(R.id.editTextRDistance);
-        txtValidateR[3]=(EditText)view.findViewById(R.id.editTextRPlace);
-        btnR = (Button)view.findViewById(R.id.buttonRace);
+        txtValidateR[0]=(EditText)view.findViewById(R.id.editTextEventName);
+        txtValidateR[1]=(EditText)view.findViewById(R.id.editTextEventDescription);
+        txtValidateR[2]=(EditText)view.findViewById(R.id.editTextOtherInformation);
+        txtValidateR[3]=(EditText)view.findViewById(R.id.editTextEventPlace);
+        btnR = (Button)view.findViewById(R.id.buttonEvent);
         btnR.setEnabled(false);
         TextWatcher btnActivation = new TextWatcher() {
             @Override
@@ -131,24 +131,24 @@ public class AddRaceFragment extends Fragment {
         bitmap.compress(Bitmap.CompressFormat.PNG, 0, outputStream);
         return outputStream.toByteArray();
     }
-    public void ValidarRace() {
+    public void onClickEvent() {
         db = dbH.getWritableDatabase();
         ContentValues values = new ContentValues();
-        Cursor search = db.rawQuery("select count(*) from " + StatusContract.TABLE_RACE, null);
+        Cursor search = db.rawQuery("select count(*) from " + StatusContract.TABLE_EVENT, null);
         search.moveToFirst();
         int aux=Integer.parseInt(search.getString(0));
-        values.put(StatusContract.Column_Race.ID,(aux+1));
-        values.put(StatusContract.Column_Race.NAME,txtValidateR[0].getText().toString());
-        values.put(StatusContract.Column_Race.DESCRIPTION,txtValidateR[1].getText().toString());
-        values.put(StatusContract.Column_Race.DISTANCE,txtValidateR[2].getText().toString());
-        values.put(StatusContract.Column_Race.PLACE, txtValidateR[3].getText().toString());
+        values.put(StatusContract.Column_Event.ID,(aux+1));
+        values.put(StatusContract.Column_Event.NAME,txtValidateR[0].getText().toString());
+        values.put(StatusContract.Column_Event.FIRST_DESCRIPTION,txtValidateR[1].getText().toString());
+        values.put(StatusContract.Column_Event.INFORMATION,txtValidateR[2].getText().toString());
+        values.put(StatusContract.Column_Event.PLACE, txtValidateR[3].getText().toString());
         String dAux = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH))+" / "+Integer.toString(calendar.get(Calendar.MONTH))+" / "+Integer.toString(calendar.get(Calendar.YEAR));;;
-        values.put(StatusContract.Column_Race.DATE,dAux);
+        values.put(StatusContract.Column_Event.DATE,dAux);
         search = db.rawQuery("select * from " + StatusContract.TABLE_LOGIN, null);
         search.moveToFirst();
-        values.put(StatusContract.Column_Race.USER,search.getString(1));
-        values.put(StatusContract.Column_Race.PICTURE,getBitmapAsByteArray(pict));
-        db.insertWithOnConflict(StatusContract.TABLE_RACE, null, values, SQLiteDatabase.CONFLICT_IGNORE);
+        values.put(StatusContract.Column_Event.USER,search.getString(1));
+        values.put(StatusContract.Column_Event.PICTURE,getBitmapAsByteArray(pict));
+        db.insertWithOnConflict(StatusContract.TABLE_EVENT, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
     }
     public void ClickGalleryR() {

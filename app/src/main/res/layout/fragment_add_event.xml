@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddRaceFragment">
+    android:layout_margin="16dp"
+    tools:context=".events.AddEvent">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -21,9 +22,9 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextRName"
+                    android:id="@+id/editTextEventName"
                     android:inputType="text"
-                    android:hint="Nombre de la carrera"
+                    android:hint="Event name"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
@@ -38,8 +39,8 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextRDescription"
-                    android:hint="Descripción"
+                    android:id="@+id/editTextEventDescription"
+                    android:hint="Description"
                     android:inputType="textCapSentences|textMultiLine"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -54,9 +55,9 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextRDistance"
-                    android:inputType="numberDecimal"
-                    android:hint="Distancia"
+                    android:id="@+id/editTextOtherInformation"
+                    android:inputType="textAutoCorrect"
+                    android:hint="Other Information"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
@@ -69,9 +70,9 @@
                 <EditText
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/editTextRPlace"
+                    android:id="@+id/editTextEventPlace"
                     android:inputType="text"
-                    android:hint="Lugar"
+                    android:hint="Place"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
@@ -100,7 +101,7 @@
                     android:layout_height="50dp"
                     android:id="@+id/galleryButton"
                     android:onClick="GClic"
-                    android:src="@android:drawable/ic_menu_gallery"
+                    android:src="@drawable/gallery"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="40dp"
                     android:background="@drawable/round_button" />
@@ -111,7 +112,7 @@
                     android:layout_below="@id/galleryButton"
                     android:id="@+id/cameraButton"
                     android:onClick="CClic"
-                    android:src="@android:drawable/ic_menu_camera"
+                    android:src="@drawable/camera"
                     android:background="@drawable/round_button"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="40dp"
@@ -121,7 +122,7 @@
                     android:layout_toRightOf="@id/cameraButton"
                     android:layout_width="fill_parent"
                     android:layout_height="150dp"
-                    android:id="@+id/raceImage"
+                    android:id="@+id/eventImage"
                     android:layout_marginRight="20dp" />
             </RelativeLayout>
 
@@ -129,8 +130,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Añadir"
-                android:id="@+id/buttonRace"
-                android:onClick="VRace"
+                android:id="@+id/buttonEvent"
+                android:onClick="onClickEvent"
                 android:textColor="#fcfafa"
                 android:textStyle="bold"
                 android:paddingLeft="16dp"

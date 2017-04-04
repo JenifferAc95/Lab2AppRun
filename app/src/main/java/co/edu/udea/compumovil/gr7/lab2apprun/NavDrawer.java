@@ -19,13 +19,17 @@ import android.view.View;
 
 import co.edu.udea.compumovil.gr7.lab2apprun.data.DbHelper;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.StatusContract;
+import co.edu.udea.compumovil.gr7.lab2apprun.events.AddEvent;
+import co.edu.udea.compumovil.gr7.lab2apprun.events.EventList;
+import co.edu.udea.compumovil.gr7.lab2apprun.user.LoginActivity;
+import co.edu.udea.compumovil.gr7.lab2apprun.user.ProfileInfoFragment;
 
 public class NavDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DbHelper dbH;
     SQLiteDatabase db;
     Fragment about = new AboutFragment();
-    Fragment races = new RaceList();
-    AddRaceFragment add = new AddRaceFragment();
+    Fragment events = new EventList();
+    AddEvent add = new AddEvent();
     Fragment info = new ProfileInfoFragment();
     FragmentTransaction manager = getSupportFragmentManager().beginTransaction();
     FloatingActionButton fab;
@@ -53,14 +57,14 @@ public class NavDrawer extends AppCompatActivity implements NavigationView.OnNav
     @Override
     public void onBackPressed() {
         manager = getSupportFragmentManager().beginTransaction();
-        races = new RaceList();
+        events = new EventList();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             if(!controlSelect){moveTaskToBack(true);}
             else{
-                manager.replace(R.id.fragment_container, races);
+                manager.replace(R.id.fragment_container, events);
                 manager.commit();
                 controlSelect=false;
                 fab.setVisibility(View.VISIBLE);
@@ -99,8 +103,8 @@ public class NavDrawer extends AppCompatActivity implements NavigationView.OnNav
             manager.replace(R.id.fragment_container,info);
             fab.setVisibility(View.INVISIBLE);
         } else if (id == R.id.events) {
-            races = new RaceList();
-            manager.replace(R.id.fragment_container, races);
+            events = new EventList();
+            manager.replace(R.id.fragment_container, events);
             fab.setVisibility(View.VISIBLE);
         } else if (id == R.id.about) {
             about = new AboutFragment();
@@ -113,9 +117,9 @@ public class NavDrawer extends AppCompatActivity implements NavigationView.OnNav
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-    public void AddRace(View v){
+    public void AddEvent(View v){
         manager = getSupportFragmentManager().beginTransaction();
-        add = new AddRaceFragment();
+        add = new AddEvent();
         manager.replace(R.id.fragment_container, add);
         manager.commit();
         fab.setVisibility(View.INVISIBLE);
@@ -130,11 +134,11 @@ public class NavDrawer extends AppCompatActivity implements NavigationView.OnNav
     public void CClic(View v){
         add.ClickCameraR();
     }
-    public void VRace(View v){
-        add.ValidarRace();
+    public void onClickEvent(View v){
+        add.onClickEvent();
         manager = getSupportFragmentManager().beginTransaction();
-        races = new RaceList();
-        manager.replace(R.id.fragment_container, races);
+        events = new EventList();
+        manager.replace(R.id.fragment_container, events);
         manager.commit();
         fab.setVisibility(View.VISIBLE);
     }

@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr7.lab2apprun;
+package co.edu.udea.compumovil.gr7.lab2apprun.user;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -21,6 +21,7 @@ import android.widget.TextView;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 
+import co.edu.udea.compumovil.gr7.lab2apprun.R;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.DbHelper;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.StatusContract;
 

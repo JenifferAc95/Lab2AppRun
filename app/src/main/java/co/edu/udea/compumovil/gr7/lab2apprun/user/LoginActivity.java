@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.gr7.lab2apprun;
+package co.edu.udea.compumovil.gr7.lab2apprun.user;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,11 +11,13 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import co.edu.udea.compumovil.gr7.lab2apprun.NavDrawer;
+import co.edu.udea.compumovil.gr7.lab2apprun.R;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.DbHelper;
 import co.edu.udea.compumovil.gr7.lab2apprun.data.StatusContract;
 
 /**
- * A login screen that offers login via email/password.
+ * Created by Jeniffer Acosta on 28/03/2017.
  */
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         db = dbH.getWritableDatabase();
         //db.execSQL("delete from " + StatusContract.TABLE_LOGIN);
         //db.execSQL("delete from "+StatusContract.TABLE_USER);
-        //db.execSQL("delete from "+StatusContract.TABLE_RACE);
+        //db.execSQL("delete from "+StatusContract.TABLE_EVENT);
         Cursor search=db.rawQuery("select * from "+ StatusContract.TABLE_LOGIN, null);
         if(search.moveToFirst()){
             Intent newActivity = new Intent(this, NavDrawer.class);

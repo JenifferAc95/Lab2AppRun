@@ -10,7 +10,7 @@ public class StatusContract {
     public static final String DB_NAME = "lab2apprun.db";
     public static final int DB_VERSION = 1;
     public static final String TABLE_USER= "usuario";
-    public static final String TABLE_RACE= "carrera";
+    public static final String TABLE_EVENT= "carrera";
     public static final String TABLE_LOGIN="logeado";
 
     public class Column_Login {
@@ -25,11 +25,11 @@ public class StatusContract {
         public static final String AGE = "age";
         public static final String PICTURE = "picture";
     }
-    public class Column_Race {
+    public class Column_Event {
         public static final String ID = BaseColumns._ID;
         public static final String NAME = "name";
-        public static final String DESCRIPTION = "description";
-        public static final String DISTANCE = "distance";
+        public static final String FIRST_DESCRIPTION = "description";
+        public static final String INFORMATION = "information";
         public static final String PLACE = "place";
         public static final String DATE = "date";
         public static final String USER = "user";

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="co.edu.udea.compumovil.gr7.lab2apprun.ProfileInfoFragment">
+    tools:context="co.edu.udea.compumovil.gr7.lab2apprun.user.ProfileInfoFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Lab2AppRun</string>
+    <string name="app_name">Events</string>
     <!-- Strings related to activities tittle-->
     <!-- Strings related to login -->
-    <string name="prompt_user">User</string>
+    <string name="user">User</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign In</string>
     <string name="error_invalid_password">Password is too short</string>
@@ -20,8 +20,8 @@
     <string name="user_no_exists">User is not registered</string>
     <string name="confirmarConstraseña">Confirm password</string>
     <string name="about">Information</string>
-    <string name="races">Races</string>
-    <string name="no_race">There are not races</string>
+    <string name="events">Events</string>
+    <string name="sinEventos">There are not Events</string>
     <string name="profile">Profile</string>
     <string name="login">Sign In or Register</string>
     <string name="action_settings">Sign Out</string>
