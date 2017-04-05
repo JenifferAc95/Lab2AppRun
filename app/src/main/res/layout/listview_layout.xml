@@ -36,25 +36,7 @@
                 android:textSize="10dp" />
 
             <TextView
-                android:id="@+id/info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10dp" />
-
-            <TextView
                 android:id="@+id/date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/place"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="10dp" />
-
-            <TextView
-                android:id="@+id/otherInfor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp" />
@@ -64,6 +46,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="10dp" />
+
+            <RatingBar
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:numStars="5"
+                android:rating="4"
+                style="?android:attr/ratingBarStyleSmall"
+                />
         </LinearLayout>
 
     </LinearLayout>

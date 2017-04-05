@@ -61,18 +61,15 @@ public class EventList extends ListFragment {
                 HashMap<String, Object> hm = new HashMap<String, Object>();
                 hm.put("name", "Nombre: " + name.get(i));
                 hm.put("desc", "Descripción : " + desc.get(i));
-                hm.put("info", "Other Info: " + info.get(i));
-                hm.put("place", "Lugar : " + place.get(i));
                 hm.put("date", "Fecha : " + date.get(i));
                 hm.put("userMail", "E-mail : " + userMail.get(i));
-                hm.put("userPhone", "Teléfono : " + userPhone.get(i));
                 hm.put("picture", BitmapFactory.decodeByteArray((byte[]) picture.get(i), 0, ((byte[]) picture.get(i)).length));
                 aList.add(hm);
             }
             String from[];
             int to[];
-            from = new String[]{"name", "desc", "info", "place", "date", "userMail", "userPhone", "picture"};
-            to = new int[]{R.id.name, R.id.desc, R.id.info, R.id.place, R.id.date, R.id.userMail, R.id.otherInfor, R.id.picture};
+            from = new String[]{"name", "desc", "date", "userMail", "picture"};
+            to = new int[]{R.id.name, R.id.desc, R.id.date, R.id.userMail, R.id.picture};
             ExtendedSimpleAdapter adapter = new ExtendedSimpleAdapter(getActivity().getBaseContext(), aList, R.layout.listview_layout, from, to);
             setListAdapter(adapter);
         }
