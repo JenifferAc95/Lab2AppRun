@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:summary="Podrás actualizar cualquier información de tu perfil. "
+        android:title="Editar Perfil">
+
+    </EditTextPreference>
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:enabled="true"
+        android:summary="No cerrar la sesión, aún despues de cerrada la aplicación."
+        android:title="Mantener Sesión" />
+
+    <PreferenceCategory
+        android:title="Notificaciones"
+        >
+
+    <SwitchPreference
+        android:summary="Deseo recibir notificaciones"
+        android:title="Notificaciones"
+        android:icon="@drawable/notifications"/>
+
+    <SwitchPreference
+        android:summary="Deseo activar el sonido de las notificaciones"
+        android:title="Sonido"
+        android:icon="@drawable/sound"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

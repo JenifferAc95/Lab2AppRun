@@ -26,12 +26,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".user.Registro"
-            android:label="Registro"/>
+        <activity
+            android:name=".user.Registro"
+            android:label="Registro" />
         <activity
             android:name=".NavDrawer"
             android:label="@string/events"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MyPreferencesActivity"/>
     </application>
 
 </manifest>

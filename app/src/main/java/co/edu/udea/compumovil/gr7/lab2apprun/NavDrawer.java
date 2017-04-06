@@ -112,6 +112,17 @@ public class NavDrawer extends AppCompatActivity implements NavigationView.OnNav
             about = new AboutFragment();
             manager.replace(R.id.fragment_container, about);
             fab.setVisibility(View.INVISIBLE);
+        } else if (id == R.id.logout){
+            db = dbH.getWritableDatabase();
+            db.execSQL("delete from " + StatusContract.TABLE_LOGIN);
+            db.close();
+            Intent newActivity = new Intent(this, LoginActivity.class);
+            startActivity(newActivity);
+            return true;
+        } else if (id == R.id.settingsNav){
+            Intent preferences = new Intent(this, MyPreferencesActivity.class);
+            startActivity(preferences);
+            return true;
         }
         manager.commit();
 

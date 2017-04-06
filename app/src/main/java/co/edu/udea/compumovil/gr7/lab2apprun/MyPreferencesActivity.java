@@ -4,7 +4,11 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 
-public class Settings extends PreferenceActivity {
+/**
+ * Created by Jeniffer Acosta on 6/04/2017.
+ */
+
+public class MyPreferencesActivity extends PreferenceActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
